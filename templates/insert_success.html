@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+</head>
+<body>
+    <center>
+        <h3>Data inserted successfully!!!</h3>
+        <span class="ms-5">Go back to insert another data.....</span><a href="{% url 'insert_data' %}" class="text-primary fw-bolder">Click Here</a>
+
+        <br><br>
+        
+        <span class="ms-5">Back to show all details.....</span><a href="{% url 'ShoeData-list' %}" class="text-primary fw-bolder">Click Here</a>
+    </center>
+</body>
+</html>
