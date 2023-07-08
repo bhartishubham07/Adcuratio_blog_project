@@ -38,6 +38,8 @@ def Registeration(request):
             NUFO.set_password(password)
             NUFO.save()
             return render(request, 'registeration_success.html')
+        else:
+            return HttpResponse('Invalid Data!!!!')
         
     return render(request, 'Registeration.html', d)
 
@@ -103,9 +105,9 @@ class ShoeData(viewsets.ViewSet):
         SPD=ShoeMS(SPO,data=request.data)
         if SPD.is_valid():
             SPD.save()
-            return Response({'Updated':'Product is updated'})
+            return Response({'Updated':'Shoe is Updated'})
         else:
-            return Response({'Failed':'Prodct is Not Updated'})
+            return Response({'Failed':'Shoe is not Updated'})
         
     
     def partial_update(self,request,pk):
@@ -113,10 +115,10 @@ class ShoeData(viewsets.ViewSet):
         SPD=ShoeMS(SPO,data=request.data,partial=True)
         if SPD.is_valid():
             SPD.save()
-            return Response({'Updated':'Product is updated'})
+            return Response({'Updated':'Shoe is Updated'})
         else:
-            return Response({'Failed':'Prodct is Not Updated'})
+            return Response({'Failed':'Shoe is not Updated'})
         
     def destroy(self,request,pk):
         Shoe.objects.get(pk=pk).delete()
-        return Response({'Deleted':'Product is deleted'})
+        return Response({'Deleted':'Shoe is Deleted'})

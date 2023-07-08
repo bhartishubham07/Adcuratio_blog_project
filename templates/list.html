@@ -8,14 +8,14 @@
   <div class="row">
       {% for i in data %}
       <div class="col-md-4">
-          <div class="card" style="width:20rem; height:25rem;">
-              <div class="card-header">
+          <div class="card bg-secondary mb-5" style="width:20rem; height:25rem;">
+              <div class="card-header bg-danger">
                   <img src="{{i.shoe_image}}" alt="" width="200px" height="200px">
               </div>
               <div class="card-body">
                   <a href="{{i.id}}"><h5 class="card-title fw-bolder text-center">{{i.brand_name}}</h5></a>
-                  <h5 class="card-title">{{i.shoe_name}}</h5>
-                  <h5 class="card-title text-center text-danger">{{i.price}}</h5>
+                  <h5 class="card-title text-dark fw-bolder">{{i.shoe_name}}</h5>
+                  <h5 class="card-title text-center text-danger">Rs: {{i.price}}</h5>
                   
               </div>
           </div>
